@@ -1,9 +1,12 @@
 package com.packtpublishing.tddjava.ch03tictactoe;
 
+//静态方法导入
+import static com.packtpublishing.tddjava.debug.MyDebug.myDebug;
+
 public class TicTacToe {
 
     public TicTacToe() {
-        System.out.println("TicTacToe()");
+        myDebug("TicTacToe()");
     }
 
     private Character[][] board = {{'\0','\0','\0'},
@@ -14,11 +17,11 @@ public class TicTacToe {
         checkAxis(y);
         setBox(x,y);
 
-        System.out.println("paly()");
+        myDebug("paly()");
     }
 
     private void checkAxis(int axis){
-        System.out.println("checkAxis()");
+        myDebug("checkAxis()");
 
         if(axis < 1 || axis > 3){
             throw new RuntimeException("X is outside board");

@@ -1,3 +1,4 @@
 rootProject.name = 'sfwAID'
 include 'tdd-java-ch03-tic-tac-toe'
+include 'myDebug'
 

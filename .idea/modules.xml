@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myDebug.iml" filepath="$PROJECT_DIR$/.idea/modules/myDebug.iml" group="myDebug" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myDebug/myDebug_main.iml" filepath="$PROJECT_DIR$/.idea/modules/myDebug/myDebug_main.iml" group="myDebug" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myDebug/myDebug_test.iml" filepath="$PROJECT_DIR$/.idea/modules/myDebug/myDebug_test.iml" group="myDebug" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sfwAID.iml" filepath="$PROJECT_DIR$/.idea/modules/sfwAID.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sfwAID_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sfwAID_main.iml" group="sfwAID" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sfwAID_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sfwAID_test.iml" group="sfwAID" />

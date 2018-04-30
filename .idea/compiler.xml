@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="myDebug_main" target="1.8" />
+      <module name="myDebug_test" target="1.8" />
       <module name="sfwAID_main" target="1.8" />
       <module name="sfwAID_test" target="1.8" />
       <module name="tdd-java-ch03-tic-tac-toe_main" target="1.8" />
