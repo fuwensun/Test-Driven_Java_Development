@@ -21,13 +21,13 @@ public class TicTacToeSpec {
     @Test
     public void whenXoutsideBoardThenRuntimeException(){
         exception.expect(RuntimeException.class);
-        ticTacToe.play(5,2);
+        ticTacToe.play(51,2);
     }
 
     @Test
     public void whenYoutsideBoardTheRuntimeException(){
         exception.expect(RuntimeException.class);
-        ticTacToe.play(2,5);
+        ticTacToe.play(2,51);
     }
 
     @Test
@@ -36,6 +36,7 @@ public class TicTacToeSpec {
         exception.expect(RuntimeException.class);
         ticTacToe.play(2,1);
 
+        System.out.println("TicTacToe");
 
     }
 }
