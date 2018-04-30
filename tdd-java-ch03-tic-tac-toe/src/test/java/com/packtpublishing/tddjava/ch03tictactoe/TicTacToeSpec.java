@@ -1,12 +1,16 @@
 package com.packtpublishing.tddjava.ch03tictactoe;
 
+//静态方法导入
+import static com.packtpublishing.tddjava.debug.MyDebug.myDebug;
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-//静态方法导入
-import static com.packtpublishing.tddjava.debug.MyDebug.myDebug;
+
+
 
 public class TicTacToeSpec {
 
@@ -42,5 +46,10 @@ public class TicTacToeSpec {
         ticTacToe.play(2,1);
         exception.expect(RuntimeException.class);
         ticTacToe.play(2,1);
+    }
+
+    @Test
+    public void giveFirstTureWhenNextPlayerThenX(){
+        assertEquals('X',ticTacToe.nextPlayer());
     }
 }
