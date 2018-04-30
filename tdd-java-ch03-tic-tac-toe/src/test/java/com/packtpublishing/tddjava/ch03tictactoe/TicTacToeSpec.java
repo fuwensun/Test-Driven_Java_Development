@@ -61,6 +61,7 @@ public class TicTacToeSpec {
 
     @Test
     public void whenPlayAndWholeHorizontalLineThenWinner(){
+        myDebug("whenPlayAndWholeHorizontalLineThenWinner()");
         ticTacToe.play(1,1); //x
         ticTacToe.play(1,2); //o
         ticTacToe.play(2,1); //x
@@ -71,6 +72,7 @@ public class TicTacToeSpec {
 
     @Test
     public void whenPlayAndWholeVerticalLineTheWinner(){
+        myDebug("whenPlayAndWholeVerticalLineTheWinner()");
         ticTacToe.play(2,1); //x
         ticTacToe.play(1,1); //o
         ticTacToe.play(3,1); //x
@@ -82,6 +84,7 @@ public class TicTacToeSpec {
 
     @Test
     public void whenPlayAndTopBottomDiagonalLisneThenWinner(){
+        myDebug("whenPlayAndTopBottomDiagonalLisneThenWinner()");
         ticTacToe.play(1,1); //x
         ticTacToe.play(1,2); //o
         ticTacToe.play(2,2); //x
