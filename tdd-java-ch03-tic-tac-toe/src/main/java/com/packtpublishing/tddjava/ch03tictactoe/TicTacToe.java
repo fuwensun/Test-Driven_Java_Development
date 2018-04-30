@@ -13,6 +13,7 @@ public class TicTacToe {
         {'\0','\0','\0'},{'\0','\0','\0'}};
 
     private char lastPlayer = '\0';
+    private static final int SIZE = 3;
 
     public String play(int x, int y){
         myDebug("paly(x = %d, y = %d)",x,y);
@@ -27,11 +28,18 @@ public class TicTacToe {
         return "No winner";
     }
 
+
     private boolean isWin(){
-        for(int index = 0; index < 3; index++){
-            if(board[0][index] == lastPlayer &&
-                    board[1][index] == lastPlayer &&
-                    board[2][index] == lastPlayer){
+        int playerTotal = lastPlayer * SIZE;
+        for(int i = 0; i < SIZE; i++){
+            if(board[0][i] + board[1][i] + board[2][i]
+                    == playerTotal){
+                return true;
+            }else if(board[i][0] + board[i][1] + board[i][2]
+                    == playerTotal){
+                return true;
+            }
+            else if(playerTotal == '\0') {
                 return true;
             }
         }
