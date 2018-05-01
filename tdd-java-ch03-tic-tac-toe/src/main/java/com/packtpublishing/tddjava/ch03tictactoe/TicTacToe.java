@@ -22,7 +22,7 @@ public class TicTacToe {
         lastPlayer = nextPlayer();
         setBox(x,y,lastPlayer);
 
-        if(isWin()){
+        if(isWin(x,y)){
             return lastPlayer + " is the winner";
         }else if(isDraw()){
             return "The result is draw";
@@ -30,7 +30,42 @@ public class TicTacToe {
         return "No winner";
     }
 
-    private boolean isWin(){
+    private boolean isWin(int x, int y){
+        int playerTotal = lastPlayer * SIZE;
+        char horizontal = '\0';
+        char vertical = '\0';
+        char diagonal1 = '\0';
+        char diagonal2 = '\0';
+
+        for(int i = 0; i < SIZE; i++){
+
+            horizontal += board[i][y -1];
+            vertical += board[x - 1][i];
+            diagonal1 += board[i][i];
+            diagonal2 += board[i][SIZE - i - 1];
+        }
+
+        if(horizontal == playerTotal ||
+                vertical == playerTotal ||
+                diagonal1 == playerTotal ||
+                diagonal2 == playerTotal){
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean isDraw(){
+        for(int x = 0; x < SIZE; x++)
+            for(int y = 0; y < SIZE; y++) {
+                if (board[x][y] == '\0'){
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isWin_2(){
         int playerTotal = lastPlayer * SIZE;
         char diagonal1 = '\0';
         char diagonal2 = '\0';
@@ -59,40 +94,31 @@ public class TicTacToe {
         return false;
     }
 
-    private boolean isDraw(){
-        for(int x = 0; x < SIZE; x++)
-            for(int y = 0; y < SIZE; y++) {
-                if (board[x][y] == '\0'){
-                    return false;
+    private boolean isWinABoolean_1(){
+        int playerTotal = lastPlayer * SIZE;
+        for(int i = 0; i < SIZE; i++){
+            if(board[0][i] + board[1][i] + board[2][i]
+                    == playerTotal){
+                return true;
+            }else if(board[i][0] + board[i][1] + board[i][2]
+                    == playerTotal){
+                return true;
+            }
+            else if(playerTotal == '\0') {
+                return true;
             }
         }
-        return true;
+
+        if(board[0][0] + board[1][1] + board[2][2]
+                == playerTotal){
+            return true;
+        }else if(board[0][2] + board[1][1] + board[2][0]
+                == playerTotal) {
+            return true;
+        }
+        return false;
     }
 
-//    private boolean isWin(){
-//        int playerTotal = lastPlayer * SIZE;
-//        for(int i = 0; i < SIZE; i++){
-//            if(board[0][i] + board[1][i] + board[2][i]
-//                    == playerTotal){
-//                return true;
-//            }else if(board[i][0] + board[i][1] + board[i][2]
-//                    == playerTotal){
-//                return true;
-//            }
-//            else if(playerTotal == '\0') {
-//                return true;
-//            }
-//        }
-//
-//        if(board[0][0] + board[1][1] + board[2][2]
-//                == playerTotal){
-//            return true;
-//        }else if(board[0][2] + board[1][1] + board[2][0]
-//                == playerTotal) {
-//            return true;
-//        }
-//        return false;
-//    }
 
     public char nextPlayer(){
         if(lastPlayer == 'X'){
